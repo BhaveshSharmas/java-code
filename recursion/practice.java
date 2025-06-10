@@ -3,8 +3,9 @@ package recursion;
 public class practice {
     public static void main(String[] args) {
         String s = "geeksforgeeks";
-        System.out.println(swapstring(s));
-        System.out.println(reverseString(s,0,s.length() -1));
+//        System.out.println(swapstring(s));
+        char[] ch = s.toCharArray();
+        System.out.println(reverseHelper(ch,0,s.length() -1));
 
     }
 
@@ -27,18 +28,18 @@ public class practice {
         ch[end] = temp;
     }
 
-    public static int reverseString(String s, int st, int e) {
-
-        char[] ch = s.toCharArray();
-
-        if (st < e){
-            return -1;
+    static char[] reverseHelper(char[] s, int start, int end) {
+        if (start >= end) {
+            return s; // Base case: return the modified array
         }
-        char temp = ch[st];
-        ch[st] = ch[e];
-        ch[e] = temp;
 
-        return reverseString(ch,st,e);
+        // Swap characters
+        char temp = s[start];
+        s[start] = s[end];
+        s[end] = temp;
+
+        // Recursive call
+        return reverseHelper(s, start + 1, end - 1);
     }
 
 
