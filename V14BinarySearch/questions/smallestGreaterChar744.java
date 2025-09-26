@@ -2,8 +2,8 @@ package V14BinarySearch.questions;
 
 public class smallestGreaterChar744 {
     public static void main(String[] args) {
-        char[] characterArray = {'a', 'b', 'c', 'd', 'e'};
-        char st = greaterCharacter(characterArray, 'd');
+        char[] characterArray = {'c', 'e', 'f'};
+        char st = greaterCharacter(characterArray, 'f');
         System.out.println(st);
     }
 
